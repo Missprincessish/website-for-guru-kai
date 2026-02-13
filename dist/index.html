@@ -10,7 +10,7 @@
     margin: 0;
     background: #000;
     overflow: hidden;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Arial, sans-serif;
   }
 
   video {
@@ -18,10 +18,7 @@
     inset: 0;
     width: 100%;
     height: 100%;
-    /* CHANGE: 'contain' shows the full video. 'cover' zooms to fill. */
-    object-fit: cover; 
-    /* Adjust this % to shift the "focus" of the zoom */
-    object-position: center center; 
+    object-fit: cover; /* Fills screen perfectly */
     z-index: -2;
   }
 
@@ -30,29 +27,39 @@
     inset: 0;
     background: rgba(0,0,0,0.35);
     z-index: -1;
-    /* This ensures the overlay doesn't "block" the clicks on the link */
-    pointer-events: none; 
+    pointer-events: none; /* Crucial: lets clicks "pass through" to the link */
   }
 
+  /* DESKTOP LINK POSITION */
   .waitlist-link {
     position: absolute;
-    top: 18px;
-    right: 20px;
-    width: 230px;
-    height: 95px;
+    top: 25px;      /* Adjust to align with desktopvideo.mp4 */
+    right: 25px;    /* Adjust to align with desktopvideo.mp4 */
+    width: 220px;
+    height: 80px;
     display: block;
-    z-index: 10; /* Increased to ensure it's on top */
+    z-index: 10;
     cursor: pointer;
-    /* TEMPORARY: Uncomment the line below to see the click area */
-    /* border: 2px solid red; */
+    /* REMOVE the line below once the link is perfectly lined up */
+    border: 2px solid red; 
+  }
+
+  /* MOBILE LINK POSITION */
+  @media (max-width: 768px) {
+    .waitlist-link {
+      top: 335px;   /* Adjust to align with mobilevideo.mp4 */
+      right: 25px;  /* Adjust to align with mobilevideo.mp4 */
+      width: 160px;
+      height: 60px;
+    }
   }
 </style>
-
 </head>
 <body>
 
 <video autoplay muted loop playsinline preload="auto">
-  <source src="./video.mp4" type="video/mp4">
+  <source src="./mobilevideo.mp4" type="video/mp4" media="(max-width: 768px)">
+  <source src="./desktopvideo.mp4" type="video/mp4">
 </video>
 
 <div class="overlay"></div>
@@ -60,8 +67,7 @@
 <a class="waitlist-link"
    href="https://forms.gle/X2Z8VbXeNiwWUD42A"
    target="_blank"
-   rel="noopener noreferrer">
-</a>
+   rel="noopener noreferrer"></a>
 
 </body>
 </html>
