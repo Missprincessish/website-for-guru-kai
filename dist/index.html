@@ -1,63 +1,118 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Guru Kai</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guru Kai</title>
 
-<style>
-  body{
-    margin:0;
-    background:black;
-    color:white;
-    font-family:Arial, Helvetica, sans-serif;
-    overflow:hidden;
-  }
+  <style>
+    body{
+      margin:0;
+      background:black;
+      color:white;
+      font-family:Arial, Helvetica, sans-serif;
+      overflow:hidden;
+    }
 
-  /* video background */
-  video{
-    position:fixed;
-    right:0;
-    bottom:0;
-    min-width:100%;
-    min-height:100%;
-    object-fit:cover;
-    z-index:-2;
-  }
+    /* video background */
+    video{
+      position:fixed;
+      right:0;
+      bottom:0;
+      min-width:100%;
+      min-height:100%;
+      object-fit:cover;
+      z-index:-2;
+    }
 
-  /* soft dark overlay so text/button pop */
-  .overlay{
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,0.35);
-    z-index:-1;
-  }
+    /* soft dark overlay */
+    .overlay{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,0.45);
+      z-index:-1;
+    }
 
-  /* center stack */
-  .center{
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
-    text-align:center;
-    width:min(92vw, 720px);
-  }
+    /* center content */
+    .center{
+      position:absolute;
+      top:50%;
+      left:50%;
+      transform:translate(-50%,-50%);
+      text-align:center;
+      width:min(92vw, 720px);
+      padding:0 16px;
+    }
 
-  .tagline{
-    font-size:2rem;
-    letter-spacing:3px;
-    opacity:0.9;
-    font-weight:300;
-    margin:0 0 22px 0;
-  }
+    .tagline{
+      font-size:2rem;
+      letter-spacing:3px;
+      opacity:0.95;
+      font-weight:300;
+      margin:0 0 18px 0;
+      text-transform:uppercase;
+    }
 
-  .btn{
-    display:inline-block;
-    padding:14px 22px;
-    border-radius:999px;
-    border:1px solid rgba(255,255,255,0.35);
-    background:rgba(0,0,0,0.35);
-    color:white;
-    text-decoration:none;
-    font-size:1rem;
-    letter-spacing:1px;
+    .sub{
+      margin:0 0 26px 0;
+      opacity:0.85;
+      line-height:1.5;
+      font-size:1.05rem;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:14px 22px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,0.4);
+      background:rgba(0,0,0,0.35);
+      color:white;
+      text-decoration:none;
+      font-size:1rem;
+      letter-spacing:1px;
+      transition:0.2s ease;
+      backdrop-filter:blur(8px);
+    }
+
+    .btn:hover{
+      background:rgba(255,255,255,0.12);
+      border-color:rgba(255,255,255,0.7);
+      transform:translateY(-1px);
+    }
+
+    .tiny{
+      margin-top:18px;
+      font-size:0.9rem;
+      opacity:0.7;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- change filename if your video name differs -->
+
+  <video autoplay muted loop playsinline preload="auto">
+    <source src="./background.mp4" type="video/mp4">
+  </video>
+
+  <div class="overlay"></div>
+
+  <div class="center">
+    <h1 class="tagline">Guru Kai</h1>
+    <p class="sub">An assistive AI that actually guides you step by step.<br>Join early access below.</p>
+
+```
+<a class="btn" href="https://forms.gle/yrZaY9WCnRUpXbCU9" target="_blank" rel="noopener noreferrer">
+  Join the Waitlist
+</a>
+
+<div class="tiny">SynHumanity Labs 🖤</div>
+```
+
+  </div>
+
+</body>
+</html>
