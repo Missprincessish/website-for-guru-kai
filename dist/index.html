@@ -1,133 +1,100 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Guru Kai</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guru Kai</title>
 
-  <style>
-    body{
-      margin:0;
-      background:#000;
-      color:#fff;
-      font-family: Arial, Helvetica, sans-serif;
-      overflow:hidden;
-    }
+<style>
+  body{
+    margin:0;
+    background:#000;
+    color:#fff;
+    font-family:Arial, Helvetica, sans-serif;
+    overflow:hidden;
+  }
 
-    /* video background */
-    video{
-      position:fixed;
-      inset:0;
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      z-index:-2;
-    }
+  video{
+    position:fixed;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    z-index:-2;
+  }
 
-    /* dark overlay so text pops */
-    .overlay{
-      position:fixed;
-      inset:0;
-      background:rgba(0,0,0,0.50);
-      z-index:-1;
-    }
+  .overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.35);
+    z-index:-1;
+  }
 
-    /* main center content */
-    .center{
-      position:absolute;
-      top:45%;
-      left:50%;
-      transform:translate(-50%,-50%);
-      text-align:center;
-      width:min(92vw, 760px);
-      padding:0 16px;
-    }
+  /* top right button + small text under it */
+  .topright{
+    position:absolute;
+    top:18px;
+    right:20px;
+    text-align:right;
+  }
 
-    .tagline{
-      font-size:2rem;
-      letter-spacing:3px;
-      opacity:0.95;
-      font-weight:300;
-      margin:0 0 14px 0;
-      text-transform:uppercase;
-    }
+  .btn{
+    display:inline-block;
+    padding:10px 18px;
+    border-radius:999px;
+    border:1px solid rgba(255,255,255,0.45);
+    background:rgba(0,0,0,0.25);
+    color:#fff;
+    text-decoration:none;
+    font-size:0.9rem;
+    letter-spacing:1px;
+    transition:0.2s ease;
+    backdrop-filter:blur(6px);
+  }
 
-    .sub{
-      margin:0 0 22px 0;
-      opacity:0.85;
-      line-height:1.5;
-      font-size:1.05rem;
-    }
+  .btn:hover{
+    background:rgba(255,255,255,0.12);
+    border-color:rgba(255,255,255,0.75);
+    transform:translateY(-1px);
+  }
 
-    .btn{
-      display:inline-block;
-      padding:14px 22px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,0.40);
-      background:rgba(0,0,0,0.30);
-      color:#fff;
-      text-decoration:none;
-      font-size:1rem;
-      letter-spacing:1px;
-      transition:0.2s ease;
-      backdrop-filter: blur(8px);
-    }
+  .small{
+    margin-top:6px;
+    font-size:0.75rem;
+    opacity:0.75;
+    letter-spacing:0.6px;
+    white-space:nowrap;
+  }
 
-    .btn:hover{
-      background:rgba(255,255,255,0.12);
-      border-color:rgba(255,255,255,0.70);
-      transform:translateY(-1px);
-    }
-
-    /* 3/4 down message */
-    .awakening{
-      position:absolute;
-      left:50%;
-      top:75%;
-      transform:translateX(-50%);
-      text-align:center;
-      font-size:1.35rem;
-      letter-spacing:4px;
-      text-transform:uppercase;
-      opacity:0.55;
-      padding:0 16px;
-      width:min(92vw, 900px);
-    }
-
-    .tiny{
-      position:absolute;
-      left:50%;
-      bottom:5%;
-      transform:translateX(-50%);
-      font-size:0.9rem;
-      opacity:0.6;
-    }
-  </style>
-
+  /* awakening text near the wave */
+  .awakening{
+    position:absolute;
+    left:50%;
+    bottom:18vh; /* nudge this up/down to match the wave edge */
+    transform:translateX(-50%);
+    text-align:center;
+    font-size:1.35rem;
+    letter-spacing:4px;
+    text-transform:uppercase;
+    opacity:0.65;
+    pointer-events:none;
+    padding:0 16px;
+  }
+</style>
 </head>
 
 <body>
   <video autoplay muted loop playsinline preload="auto">
-    <source src="./video.mp4" type="video/mp4" />
+    <source src="./video.mp4" type="video/mp4">
   </video>
 
   <div class="overlay"></div>
 
-  <div class="center">
-    <h1 class="tagline">Guru Kai</h1>
-    <p class="sub">
-      An assistive AI that actually guides you step by step.<br />
-      Join early access below.
-    </p>
-
-<a class="btn" href="https://forms.gle/yrZaY9WCnRUpXbCU9" target="_blank" rel="noopener noreferrer">
-  Join the Waitlist
-</a>
-
+  <div class="topright">
+    <a class="btn" href="https://forms.gle/yrZaY9WCnRUpXbCU9" target="_blank" rel="noopener noreferrer">Join the Waitlist</a>
+    <div class="small">Early access updates</div>
   </div>
 
   <div class="awakening">Guru Kai Awakening Soon.</div>
-  <div class="tiny">SynHumanity Labs 🖤</div>
 </body>
 </html>
