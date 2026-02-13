@@ -9,39 +9,38 @@
   <style>
     body{
       margin:0;
-      background:black;
-      color:white;
-      font-family:Arial, Helvetica, sans-serif;
+      background:#000;
+      color:#fff;
+      font-family: Arial, Helvetica, sans-serif;
       overflow:hidden;
     }
 
     /* video background */
     video{
       position:fixed;
-      right:0;
-      bottom:0;
-      min-width:100%;
-      min-height:100%;
+      inset:0;
+      width:100%;
+      height:100%;
       object-fit:cover;
       z-index:-2;
     }
 
-    /* soft dark overlay */
+    /* dark overlay so text pops */
     .overlay{
       position:fixed;
       inset:0;
-      background:rgba(0,0,0,0.45);
+      background:rgba(0,0,0,0.50);
       z-index:-1;
     }
 
-    /* center content */
+    /* main center content */
     .center{
       position:absolute;
-      top:50%;
+      top:45%;
       left:50%;
       transform:translate(-50%,-50%);
       text-align:center;
-      width:min(92vw, 720px);
+      width:min(92vw, 760px);
       padding:0 16px;
     }
 
@@ -50,12 +49,12 @@
       letter-spacing:3px;
       opacity:0.95;
       font-weight:300;
-      margin:0 0 18px 0;
+      margin:0 0 14px 0;
       text-transform:uppercase;
     }
 
     .sub{
-      margin:0 0 26px 0;
+      margin:0 0 22px 0;
       opacity:0.85;
       line-height:1.5;
       font-size:1.05rem;
@@ -65,54 +64,72 @@
       display:inline-block;
       padding:14px 22px;
       border-radius:999px;
-      border:1px solid rgba(255,255,255,0.4);
-      background:rgba(0,0,0,0.35);
-      color:white;
+      border:1px solid rgba(255,255,255,0.40);
+      background:rgba(0,0,0,0.30);
+      color:#fff;
       text-decoration:none;
       font-size:1rem;
       letter-spacing:1px;
       transition:0.2s ease;
-      backdrop-filter:blur(8px);
+      backdrop-filter: blur(8px);
     }
 
     .btn:hover{
       background:rgba(255,255,255,0.12);
-      border-color:rgba(255,255,255,0.7);
+      border-color:rgba(255,255,255,0.70);
       transform:translateY(-1px);
     }
 
+    /* 3/4 down message */
+    .awakening{
+      position:absolute;
+      left:50%;
+      top:75%;
+      transform:translateX(-50%);
+      text-align:center;
+      font-size:1.35rem;
+      letter-spacing:4px;
+      text-transform:uppercase;
+      opacity:0.55;
+      padding:0 16px;
+      width:min(92vw, 900px);
+    }
+
     .tiny{
-      margin-top:18px;
+      position:absolute;
+      left:50%;
+      bottom:5%;
+      transform:translateX(-50%);
       font-size:0.9rem;
-      opacity:0.7;
+      opacity:0.6;
     }
   </style>
 
 </head>
 
 <body>
-
-  <!-- change filename if your video name differs -->
-
   <video autoplay muted loop playsinline preload="auto">
-    <source src="./background.mp4" type="video/mp4">
+    <source src="./video.mp4" type="video/mp4" />
   </video>
 
   <div class="overlay"></div>
 
   <div class="center">
     <h1 class="tagline">Guru Kai</h1>
-    <p class="sub">An assistive AI that actually guides you step by step.<br>Join early access below.</p>
+    <p class="sub">
+      An assistive AI that actually guides you step by step.<br />
+      Join early access below.
+    </p>
 
 ```
 <a class="btn" href="https://forms.gle/yrZaY9WCnRUpXbCU9" target="_blank" rel="noopener noreferrer">
   Join the Waitlist
 </a>
-
-<div class="tiny">SynHumanity Labs 🖤</div>
 ```
 
   </div>
 
+  <div class="awakening">Guru Kai Awakening Soon.</div>
+  <div class="tiny">SynHumanity Labs 🖤</div>
 </body>
 </html>
